@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmation Page - MYC</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    section.confirmation {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      max-width: 400px;
+      width: 100%;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    #submittedData {
+      margin-top: 20px;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    strong {
+      color: #007bff;
+    }
+  </style>
+</head>
+<body>
+  <section class="confirmation">
+    <h2>Confirmation Page</h2>
+
+    <div id="submittedData">
+      <!-- Display submitted data here -->
+    </div>
+
+    <script>
+      // Retrieve form data from localStorage
+      var formData = JSON.parse(localStorage.getItem("formData"));
+
+      // Display submitted data on the confirmation page
+      if (formData) {
+        var submittedDataElement = document.getElementById("submittedData");
+        submittedDataElement.innerHTML = "<p><strong>Name:</strong> " + formData.name + "</p>" +
+                                        "<p><strong>Email:</strong> " + formData.email + "</p>" +
+                                        "<p><strong>Phone:</strong> " + formData.phone + "</p>" +
+                                        "<p><strong>Gender:</strong> " + formData.gender + "</p>" +
+                                        "<p><strong>Date of Birth:</strong> " + formData.dob + "</p>" +
+                                        "<p><strong>Course:</strong> " + formData.course + "</p>";
+      }
+    </script>
+  </section>
+</body>
+</html>
